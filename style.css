@@ -219,3 +219,28 @@ nav{
 .card{
     text-align:left;
 }
+
+/* improve readability */
+h1,h2,h3{
+    letter-spacing:-0.5px;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+/* better card spacing */
+.card{
+    line-height:1.6;
+}
+
+/* project hover = clickable feel */
+.project{
+    text-decoration:none;
+    color:white;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+}

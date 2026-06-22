@@ -17,6 +17,19 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 </script>
+    <script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+});
+</script>
 <body>
 
 <header>
@@ -31,14 +44,17 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     </nav>
 </header>
 
-<section class="hero">
-    <div class="glass-card fade-in">
-        <h2><span id="typing"></span></h2>
-        
+<section class="hero reveal">
+
+    <div class="glass-card">
+
         <img src="images/profile.jpg" class="profile-img">
 
         <h1>Daryl John Pebte</h1>
-        <h2>Frontend Web Developer</h2>
+
+        <h2>
+            <span id="typing"></span>
+        </h2>
 
         <p>
             I design and build modern, responsive, and high-quality websites for businesses and brands.
@@ -50,6 +66,7 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
         </div>
 
     </div>
+
 </section>
 
 <section id="about">
@@ -73,7 +90,6 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 </section>
 
 <section id="projects" class="reveal">
-    <h2>My Projects</h2>
 
     <div class="card">
         <h3>To-Do App</h3>
@@ -92,14 +108,15 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
         <p>Real-time weather app using API integration.</p>
         <a class="btn" href="https://dharyllejohn.github.io/weather-app/" target="_blank">Live Demo</a>
     </div>
+
 </section>
        
 <section id="contact" class="reveal">
-    <h2>Let’s Work Together</h2>
 
     <p>I’m available for freelance web development projects.</p>
 
     <a href="mailto:daryljohn124@gmail.com" class="btn">Send Email</a>
+
 </section>
 
 <footer>
@@ -110,16 +127,5 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 </body>
     <script>
-const text = "Frontend Web Developer";
-let i = 0;
 
-function type() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 100);
-    }
-}
-type();
-</script>
 </html>

@@ -1,16 +1,30 @@
 body {
     margin: 0;
-    font-family: Arial;
-    background: #0f172a;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: white;
+    scroll-behavior: smooth;
 }
 
-/* HERO */
+/* HERO GLASS EFFECT */
 .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    padding: 80px 20px;
 }
 
+.glass-card {
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(56,189,248,0.2);
+}
+
+/* PROFILE IMAGE */
 .profile-img {
     width: 140px;
     height: 140px;
@@ -21,19 +35,30 @@ body {
 }
 
 /* TEXT */
-h1 { font-size: 42px; }
-h2 { color: #38bdf8; font-weight: normal; }
-.tagline { opacity: 0.8; }
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #38bdf8;
+    font-weight: normal;
+}
 
 /* BUTTONS */
 .btn {
     background: #38bdf8;
     color: black;
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
     text-decoration: none;
     margin: 5px;
     display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 .btn-outline {
@@ -44,33 +69,33 @@ h2 { color: #38bdf8; font-weight: normal; }
 
 /* PROJECT CARDS */
 .card {
-    background: #1e293b;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 20px;
     margin: 15px;
-    border-radius: 12px;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* ANIMATION */
+/* FADE IN ANIMATION */
 .fade-in {
     opacity: 0;
     animation: fadeUp 1s forwards;
 }
 
-.delay { animation-delay: 0.3s; }
-.delay2 { animation-delay: 0.6s; }
-.delay3 { animation-delay: 0.9s; }
-
 @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-html {
-    scroll-behavior: smooth;
 }

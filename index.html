@@ -1,95 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daryl John Pebte | Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #38bdf8;
+    font-weight: normal;
+    min-height: 30px;
+}
+
+.btn {
+    background: #38bdf8;
+    color: black;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.card {
+    background: #1e293b;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
 </head>
-    <script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-</script>
-    <script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
-
-document.querySelectorAll(".reveal").forEach((el) => {
-    observer.observe(el);
-});
-</script>
 <body>
 
-<header>
-    <nav>
-        <h2>Daryl John</h2>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
+<!-- HERO -->
 <section class="hero reveal">
 
-    <div class="glass-card">
+    <img src="images/profile.jpg" class="profile-img">
 
-        <img src="images/profile.jpg" class="profile-img">
+    <h1>Daryl John Pebte</h1>
 
-        <h1>Daryl John Pebte</h1>
+    <h2><span id="typing"></span></h2>
 
-        <h2>
-            <span id="typing"></span>
-        </h2>
+    <p>
+        I design and build modern, responsive websites for businesses and brands.
+    </p>
 
-        <p>
-            I design and build modern, responsive, and high-quality websites for businesses and brands.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Hire Me</a>
-        </div>
-
+    <div>
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Hire Me</a>
     </div>
 
 </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Hi, I'm Daryl John, a web developer from the Philippines.
-        I create responsive websites using HTML, CSS, and JavaScript.
-        I am passionate about learning new technologies and helping businesses
-        build their online presence.
-    </p>
-    <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">HTML5</div>
-    <div class="card">CSS3</div>
-    <div class="card">JavaScript</div>
-    <div class="card">Git & GitHub</div>
-    <div class="card">Responsive Design</div>
-</section>
-</section>
-    </p>
-</section>
-
+<!-- PROJECTS -->
 <section id="projects" class="reveal">
+
+    <h2>Projects</h2>
 
     <div class="card">
         <h3>To-Do App</h3>
@@ -110,8 +132,11 @@ document.querySelectorAll(".reveal").forEach((el) => {
     </div>
 
 </section>
-       
+
+<!-- CONTACT -->
 <section id="contact" class="reveal">
+
+    <h2>Contact</h2>
 
     <p>I’m available for freelance web development projects.</p>
 
@@ -119,13 +144,35 @@ document.querySelectorAll(".reveal").forEach((el) => {
 
 </section>
 
-<footer>
-    <p>© 2026 Daryl John Pebte</p>
-</footer>
+<!-- JS SCRIPTS -->
+<script>
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
 
-<script src="script.js"></script>
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+});
+
+/* TYPING EFFECT */
+const text = "Frontend Web Developer";
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+    }
+}
+
+type();
+</script>
 
 </body>
-    <script>
-
 </html>

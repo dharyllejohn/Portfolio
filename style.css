@@ -101,3 +101,43 @@ html{
     border-radius: 50% !important;
     object-fit: cover !important;
 }
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero h2 {
+    color: gray;
+    font-weight: normal;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+.service-card, .project-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    border-radius: 10px;
+}

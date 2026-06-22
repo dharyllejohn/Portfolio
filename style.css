@@ -128,3 +128,43 @@ footer{
     text-align:center;
     opacity:0.5;
 }
+
+/* ===== ANIMATED BACKGROUND GLOWS ===== */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.25;
+    z-index: -1;
+    animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+/* TOP LEFT GLOW */
+body::before {
+    background: #38bdf8;
+    top: -100px;
+    left: -100px;
+}
+
+/* BOTTOM RIGHT GLOW */
+body::after {
+    background: #6366f1;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 2s;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatGlow {
+    from {
+        transform: translate(0px, 0px) scale(1);
+    }
+    to {
+        transform: translate(50px, 80px) scale(1.2);
+    }
+}

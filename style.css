@@ -212,3 +212,10 @@ nav{
 .project{
     cursor:pointer;
 }
+.card h3{
+    color:#38bdf8;
+}
+
+.card{
+    text-align:left;
+}

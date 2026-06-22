@@ -6,6 +6,17 @@
     <title>Daryl John Pebte | Web Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
 <body>
 
 <header>

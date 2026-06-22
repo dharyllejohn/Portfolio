@@ -94,9 +94,10 @@ footer{
 html{
     scroll-behavior:smooth;
 }
-.profile-img{
-    width:250px;
-    height:250px;
-    object-fit:cover;
-    border-radius:50%;
+.profile-img {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
 }

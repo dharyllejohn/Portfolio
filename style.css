@@ -152,3 +152,12 @@ nav{
     transform:translate(-50%,-50%);
     z-index:-1;
 }
+.card{
+    display:block;
+    text-decoration:none;
+    color:white;
+}
+
+.card:hover{
+    cursor:pointer;
+}

@@ -150,3 +150,11 @@ html{
     text-decoration: none;
     border-radius: 5px;
 }
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid black;
+    margin-bottom: 15px;
+}

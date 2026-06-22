@@ -33,6 +33,7 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 <section class="hero">
     <div class="glass-card fade-in">
+        <h2><span id="typing"></span></h2>
         
         <img src="images/profile.jpg" class="profile-img">
 
@@ -108,4 +109,17 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 <script src="script.js"></script>
 
 </body>
+    <script>
+const text = "Frontend Web Developer";
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+    }
+}
+type();
+</script>
 </html>
